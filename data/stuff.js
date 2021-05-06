@@ -1,7 +1,7 @@
 // example seed data
 const stuff = [
   {
-    id: expect.any(Number),
+    id: 1,
     name: 'lamp',
     type: 'furniture',
     description: 'A wooden desk lamp.',
@@ -10,7 +10,7 @@ const stuff = [
     color: 'brown'
   },
   {
-    id: expect.any(Number),
+    id: 2,
     name: 'radio',
     type: 'furniture',
     description: 'A tabletop FM radio.',
@@ -19,7 +19,7 @@ const stuff = [
     color: 'brown'
   },
   {
-    id: expect.any(Number),
+    id: 3,
     name: 'bouquet',
     type: 'plant',
     description: 'Some flowers I picked out in the city, in a jar.',
@@ -28,7 +28,7 @@ const stuff = [
     color: 'green'
   },
   {
-    id: expect.any(Number),
+    id: 4,
     name: 'books',
     type: 'things',
     description: 'A few stacks of books, probably around 100.',
@@ -37,7 +37,7 @@ const stuff = [
     color: 'green'
   },
   {
-    id: expect.any(Number),
+    id: 5,
     name: 'poem',
     type: 'art',
     description: 'A Marilyn Hacker poem transcribed on handmade paper that I got from my partner as a gift.',
@@ -46,7 +46,7 @@ const stuff = [
     color: 'blue'
   },
   {
-    id: expect.any(Number),
+    id: 6,
     name: 'rug',
     type: 'textiles',
     description: 'A flatwoven rug from Ikea.',
@@ -55,7 +55,7 @@ const stuff = [
     color: 'white'
   },
   {
-    id: expect.any(Number),
+    id: 7,
     name: 'blanket',
     type: 'textiles',
     description: 'A wool blanket hanging on my door.',
@@ -64,7 +64,7 @@ const stuff = [
     color: 'blue'
   },
   {
-    id: expect.any(Number),
+    id: 8,
     name: 'curtain',
     type: 'textiles',
     description: 'Natural color linen curtain with wooden curtain rings.',
@@ -73,7 +73,7 @@ const stuff = [
     color: 'white'
   },
   {
-    id: expect.any(Number),
+    id: 9,
     name: 'desk',
     type: 'furniture',
     description: 'An old hardwood desk, pretty small. It has three drawers',
@@ -82,7 +82,7 @@ const stuff = [
     color: 'brown'
   },
   {
-    id: expect.any(Number),
+    id: 10,
     name: 'yoga mat',
     type: 'things',
     description: 'A leaf green yoga mat.',
@@ -91,7 +91,7 @@ const stuff = [
     color: 'green'
   },
   {
-    id: expect.any(Number),
+    id: 11,
     name: 'computer',
     type: 'things',
     description: 'A space gray Macbook Pro.',

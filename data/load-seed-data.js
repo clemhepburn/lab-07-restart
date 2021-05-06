@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import client from '../lib/client.js';
 // import our seed data:
-import stuff from './stuff';
+import stuff from './stuff.js';
 
 run();
 
