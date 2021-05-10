@@ -121,6 +121,36 @@ describe('API Routes', () => {
     }
   ];
 
+  let newThing = {
+    id: expect.any(Number),
+    name: 'mirror',
+    type: 'furniture',
+    description: 'an oval mirror with a dried rose taped to it.',
+    isSentimental: true,
+    yearAcquired: 2020,
+    color: 'silver'
+  };
+
+  let newThing2 = {
+    id: expect.any(Number),
+    name: 'throw',
+    type: 'textiles',
+    description: 'a faded pumpkin orange woven throw with fringe',
+    isSentimental: false,
+    yearAcquired: 2019,
+    color: 'orange'
+  };
+
+  let newThing3 = {
+    id: expect.any(Number),
+    name: 'basket',
+    type: 'furniture',
+    description: 'a large woven straw basket with handles',
+    isSentimental: true,
+    yearAcquired: 2017,
+    color: 'wheat'
+  };
+
   // If a GET request is made to /api/cats, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data?
