@@ -11,13 +11,7 @@ describe('API Routes', () => {
   //   execSync('npm run setup-db');
   // });
 
-  beforeAll(() => {
-    execSync('npm run recreate-tables');
-  });
 
-  afterAll(async () => {
-    return client.end();
-  });
 
   const expectedStuff = [
     {
@@ -150,6 +144,14 @@ describe('API Routes', () => {
     yearAcquired: 2017,
     color: 'wheat'
   };
+
+  beforeAll(() => {
+    execSync('npm run recreate-tables');
+  });
+
+  afterAll(async () => {
+    return client.end();
+  });
 
   // If a GET request is made to /api/cats, does:
   // 1) the server respond with status of 200
