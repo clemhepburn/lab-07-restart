@@ -176,4 +176,21 @@ describe('API Routes', () => {
     expect(response.status).toBe(200);
     expect(response.body).toEqual(expectedStuff[1]);
   });
+
+  it('POST /api/stuff', async () => {
+    const response = await request.post('/api/stuff').send(newThing);
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(newThing);
+  });
+
+  it('PUT /api/stuff/:id', async () => {
+    const thing = (await request.post('/api/stuff').send(newThing2)).body;
+    thing.color = 'blue';
+
+    const response = await request.put(`/api/stuff/${thing.id}`).send(thing);
+
+    expect(response.status).toBe(200);
+    expect(response.body.color).toEqual('blue');
+  });
 });
