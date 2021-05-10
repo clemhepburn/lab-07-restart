@@ -206,4 +206,16 @@ describe('API Routes', () => {
     expect(response.body).toEqual([...expectedStuff, thing1, thing2, thing3]);
   });
 
+  it('DELETE /api/stuff/:id', async () => {
+    execSync('npm run setup-db');
+    await request.delete(`/api/stuff/${expectedStuff.length}`);
+
+    const response = await request.get('/api/stuff');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(expect.arrayContaining(expectedStuff.slice(0, -1)));
+  });
+
+
+
 });
