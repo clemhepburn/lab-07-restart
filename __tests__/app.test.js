@@ -193,4 +193,17 @@ describe('API Routes', () => {
     expect(response.status).toBe(200);
     expect(response.body.color).toEqual('blue');
   });
+
+  it('GET /api/stuff and POST /api/stuff/:id', async () => {
+    execSync('npm run setup-db');
+    const thing1 = (await request.post('/api/stuff').send(newThing)).body;
+    const thing2 = (await request.post('/api/stuff').send(newThing2)).body;
+    const thing3 = (await request.post('/api/stuff').send(newThing3)).body;
+
+    const response = await request.get('/api/stuff');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual([...expectedStuff, thing1, thing2, thing3]);
+  });
+
 });
