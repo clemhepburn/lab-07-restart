@@ -148,16 +148,7 @@ describe('API Routes', () => {
     userId: expect.any(Number)
   };
 
-  let newThing3 = {
-    id: expect.any(Number),
-    name: 'basket',
-    type: 'furniture',
-    description: 'a large woven straw basket with handles',
-    isSentimental: true,
-    yearAcquired: 2017,
-    color: 'wheat',
-    userId: expect.any(Number)
-  };
+
 
   // beforeAll(() => {
   //   execSync('npm run recreate-tables');
