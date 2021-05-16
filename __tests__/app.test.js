@@ -166,7 +166,7 @@ describe('API Routes', () => {
   let user;
 
   beforeAll(async () => {
-    execSync('npm run recreate-tables');
+    execSync('npm run setup-db');
 
     const response = await request
       .post('/api/auth/signup')
@@ -189,7 +189,7 @@ describe('API Routes', () => {
   // If a GET request is made to /api/cats, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data?
-  it.skip('GET /api/stuff', async () => {
+  it('GET /api/stuff', async () => {
     // act - make the request
     const response = await request.get('/api/stuff');
 
@@ -204,10 +204,13 @@ describe('API Routes', () => {
   // If a GET request is made to /api/cats/:id, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data for the cat with that id?
-  test.skip('GET /api/stuff/:id', async () => {
-    const response = await request.get('/api/stuff/2');
+  test('GET /api/stuff/:id', async () => {
+    newThing.userId = user.id;
+    const thing = (await request.post('/api/stuff').send(newThing)).body;
+    const response = await request.get(`/api/stuff/${thing.id}`);
     expect(response.status).toBe(200);
-    expect(response.body).toEqual(expectedStuff[1]);
+    expect(response.body).toEqual(thing);
+    
   });
 
   it('POST /api/stuff', async () => {
@@ -221,7 +224,6 @@ describe('API Routes', () => {
   it('PUT /api/stuff/:id', async () => {
     newThing2.userId = user.id;
     const thing = (await request.post('/api/stuff').send(newThing2)).body;
-    console.log(thing);
     thing.color = 'blue';
 
     const response = await request.put(`/api/stuff/${thing.id}`).send(thing);
@@ -230,19 +232,8 @@ describe('API Routes', () => {
     expect(response.body.color).toEqual('blue');
   });
 
-  it.skip('GET /api/stuff and POST /api/stuff/:id', async () => {
-    execSync('npm run setup-db');
-    const thing1 = (await request.post('/api/stuff').send(newThing)).body;
-    const thing2 = (await request.post('/api/stuff').send(newThing2)).body;
-    const thing3 = (await request.post('/api/stuff').send(newThing3)).body;
 
-    const response = await request.get('/api/stuff');
-
-    expect(response.status).toBe(200);
-    expect(response.body).toEqual([...expectedStuff, thing1, thing2, thing3]);
-  });
-
-  it.skip('DELETE /api/stuff/:id', async () => {
+  it('DELETE /api/stuff/:id', async () => {
     execSync('npm run setup-db');
     await request.delete(`/api/stuff/${expectedStuff.length}`);
 
