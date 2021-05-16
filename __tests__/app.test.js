@@ -21,7 +21,8 @@ describe('API Routes', () => {
       description: 'A wooden desk lamp.',
       isSentimental: false,
       yearAcquired: 2020,
-      color: 'brown'
+      color: 'brown',
+      userId:expect.any(Number)
     },
     {
       id: 2,
@@ -30,7 +31,8 @@ describe('API Routes', () => {
       description: 'A tabletop FM radio.',
       isSentimental: false,
       yearAcquired: 2021,
-      color: 'brown'
+      color: 'brown',
+      userId:expect.any(Number)
     },
     {
       id: 3,
@@ -39,7 +41,8 @@ describe('API Routes', () => {
       description: 'Some flowers I picked out in the city, in a jar.',
       isSentimental: true,
       yearAcquired: 2021,
-      color: 'green'
+      color: 'green',
+      userId:expect.any(Number)
     },
     {
       id: 4,
@@ -48,7 +51,8 @@ describe('API Routes', () => {
       description: 'A few stacks of books, probably around 100.',
       isSentimental: true,
       yearAcquired: 2014,
-      color: 'green'
+      color: 'green',
+      userId:expect.any(Number)
     },
     {
       id: 5,
@@ -57,7 +61,8 @@ describe('API Routes', () => {
       description: 'A Marilyn Hacker poem transcribed on handmade paper that I got from my partner as a gift.',
       isSentimental: true,
       yearAcquired: 2020,
-      color: 'blue'
+      color: 'blue',
+      userId:expect.any(Number)
     },
     {
       id: 6,
@@ -66,7 +71,8 @@ describe('API Routes', () => {
       description: 'A flatwoven rug from Ikea.',
       isSentimental: false,
       yearAcquired: 2021,
-      color: 'white'
+      color: 'white',
+      userId:expect.any(Number)
     },
     {
       id: 7,
@@ -75,7 +81,8 @@ describe('API Routes', () => {
       description: 'A wool blanket hanging on my door.',
       isSentimental: false,
       yearAcquired: 2021,
-      color: 'blue'
+      color: 'blue',
+      userId:expect.any(Number)
     },
     {
       id: 8,
@@ -84,7 +91,8 @@ describe('API Routes', () => {
       description: 'Natural color linen curtain with wooden curtain rings.',
       isSentimental: false,
       yearAcquired: 2020,
-      color: 'white'
+      color: 'white',
+      userId:expect.any(Number)
     },
     {
       id: 9,
@@ -93,7 +101,8 @@ describe('API Routes', () => {
       description: 'An old hardwood desk, pretty small. It has three drawers',
       isSentimental: false,
       yearAcquired: 2020,
-      color: 'brown'
+      color: 'brown',
+      userId:expect.any(Number)
     },
     {
       id: 10,
@@ -102,7 +111,8 @@ describe('API Routes', () => {
       description: 'A leaf green yoga mat.',
       isSentimental: true,
       yearAcquired: 2018,
-      color: 'green'
+      color: 'green',
+      userId:expect.any(Number)
     },
     {
       id: 11,
@@ -111,7 +121,8 @@ describe('API Routes', () => {
       description: 'A space gray Macbook Pro.',
       isSentimental: true,
       yearAcquired: 2021,
-      color: 'gray'
+      color: 'gray',
+      userId:expect.any(Number)
     }
   ];
 
@@ -122,7 +133,8 @@ describe('API Routes', () => {
     description: 'an oval mirror with a dried rose taped to it.',
     isSentimental: true,
     yearAcquired: 2020,
-    color: 'silver'
+    color: 'silver',
+    userId:expect.any(Number)
   };
 
   let newThing2 = {
@@ -132,7 +144,8 @@ describe('API Routes', () => {
     description: 'a faded pumpkin orange woven throw with fringe',
     isSentimental: false,
     yearAcquired: 2019,
-    color: 'orange'
+    color: 'orange',
+    userId:expect.any(Number)
   };
 
   let newThing3 = {
@@ -142,7 +155,8 @@ describe('API Routes', () => {
     description: 'a large woven straw basket with handles',
     isSentimental: true,
     yearAcquired: 2017,
-    color: 'wheat'
+    color: 'wheat',
+    userId:expect.any(Number)
   };
 
   // beforeAll(() => {
