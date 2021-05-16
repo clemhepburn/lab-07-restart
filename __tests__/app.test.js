@@ -22,7 +22,7 @@ describe('API Routes', () => {
       isSentimental: false,
       yearAcquired: 2020,
       color: 'brown',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ describe('API Routes', () => {
       isSentimental: false,
       yearAcquired: 2021,
       color: 'brown',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ describe('API Routes', () => {
       isSentimental: true,
       yearAcquired: 2021,
       color: 'green',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 4,
@@ -52,7 +52,7 @@ describe('API Routes', () => {
       isSentimental: true,
       yearAcquired: 2014,
       color: 'green',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 5,
@@ -62,7 +62,7 @@ describe('API Routes', () => {
       isSentimental: true,
       yearAcquired: 2020,
       color: 'blue',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 6,
@@ -72,7 +72,7 @@ describe('API Routes', () => {
       isSentimental: false,
       yearAcquired: 2021,
       color: 'white',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 7,
@@ -82,7 +82,7 @@ describe('API Routes', () => {
       isSentimental: false,
       yearAcquired: 2021,
       color: 'blue',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 8,
@@ -92,7 +92,7 @@ describe('API Routes', () => {
       isSentimental: false,
       yearAcquired: 2020,
       color: 'white',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 9,
@@ -102,7 +102,7 @@ describe('API Routes', () => {
       isSentimental: false,
       yearAcquired: 2020,
       color: 'brown',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 10,
@@ -112,7 +112,7 @@ describe('API Routes', () => {
       isSentimental: true,
       yearAcquired: 2018,
       color: 'green',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     },
     {
       id: 11,
@@ -122,7 +122,7 @@ describe('API Routes', () => {
       isSentimental: true,
       yearAcquired: 2021,
       color: 'gray',
-      userId:expect.any(Number)
+      userId: expect.any(Number)
     }
   ];
 
@@ -134,7 +134,7 @@ describe('API Routes', () => {
     isSentimental: true,
     yearAcquired: 2020,
     color: 'silver',
-    userId:expect.any(Number)
+    userId: expect.any(Number)
   };
 
   let newThing2 = {
@@ -145,7 +145,7 @@ describe('API Routes', () => {
     isSentimental: false,
     yearAcquired: 2019,
     color: 'orange',
-    userId:expect.any(Number)
+    userId: expect.any(Number)
   };
 
   let newThing3 = {
@@ -156,7 +156,7 @@ describe('API Routes', () => {
     isSentimental: true,
     yearAcquired: 2017,
     color: 'wheat',
-    userId:expect.any(Number)
+    userId: expect.any(Number)
   };
 
   // beforeAll(() => {
@@ -173,7 +173,7 @@ describe('API Routes', () => {
       .send({
         name: 'Me the User',
         email: 'me@user.com',
-        passwordHash: 'password'
+        password: 'password'
       });
 
     expect(response.status).toBe(200);
@@ -189,7 +189,7 @@ describe('API Routes', () => {
   // If a GET request is made to /api/cats, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data?
-  it('GET /api/stuff', async () => {
+  it.skip('GET /api/stuff', async () => {
     // act - make the request
     const response = await request.get('/api/stuff');
 
@@ -210,15 +210,18 @@ describe('API Routes', () => {
     expect(response.body).toEqual(expectedStuff[1]);
   });
 
-  it.skip('POST /api/stuff', async () => {
+  it('POST /api/stuff', async () => {
+    newThing.userId = user.id;
     const response = await request.post('/api/stuff').send(newThing);
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual(newThing);
   });
 
-  it.skip('PUT /api/stuff/:id', async () => {
+  it('PUT /api/stuff/:id', async () => {
+    newThing2.userId = user.id;
     const thing = (await request.post('/api/stuff').send(newThing2)).body;
+    console.log(thing);
     thing.color = 'blue';
 
     const response = await request.put(`/api/stuff/${thing.id}`).send(thing);

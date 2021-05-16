@@ -23,7 +23,8 @@ async function run() {
         description VARCHAR(1024) NOT NULL,
         is_sentimental BOOLEAN DEFAULT FALSE,
         year_acquired INTEGER NOT NULL,
-        color VARCHAR(512) NOT NULL
+        color VARCHAR(512) NOT NULL,
+        user_id INTEGER NOT NULL REFERENCES users(id)
       );
     `);
 
